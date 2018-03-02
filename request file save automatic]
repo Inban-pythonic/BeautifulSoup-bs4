@@ -1,0 +1,18 @@
+import requests  # pip install requests in your cmd prompt
+
+# Call requests.get() to download the file
+res = requests.get("https://holybooks-lichtenbergpress.netdna-ssl.com/wp-content/uploads/Bhakti-Yoga-by-Swami-Vivekananda.pdf")
+
+#Checking preferences
+res.raise_for_status()
+print(res)
+print(res.status_code)
+print(res.ok)
+
+SaveFile = open("SV", "wb") # all open() with 'wb' to create a new file in write binary mode.
+
+# Loop over the Response objects iter_content() method.
+for words in res.iter_content(100000):
+    SaveFile.write(words)
+    
+SaveFile.close() # Call close() to close the file.
