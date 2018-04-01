@@ -15,4 +15,4 @@ SaveFile = open("SV", "wb") # all open() with 'wb' to create a new file in write
 for words in res.iter_content(100000):
     SaveFile.write(words)
     
-SaveFile.close() # Call close() to close the file.
+SaveFile.close() # Call close() to close the file..
